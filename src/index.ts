@@ -1,6 +1,7 @@
 import express from "express";
 import Jimp from "jimp";
 import morgan from "morgan";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 const PORT = process.env.PORT || 3000;
 
@@ -23,14 +24,30 @@ app.get("/v1", async (req, res) => {
     return res.status(404).send();
   }
 
-  let image: Jimp;
+  let response: AxiosResponse<any>;
+
   try {
-    image = await Jimp.read(url.toString());
+    response = await axios.get(url.toString(), {
+      responseType: "arraybuffer",
+    });
   } catch (e) {
+    console.log("logging error");
+
     console.log({ e });
 
-    return res.send();
+    if (axios.isAxiosError(e)) {
+      if (e.response?.status) {
+        res.status(e.response.status);
+      } else {
+        res.status(400);
+      }
+      return res.send(e.code);
+    } else {
+      return res.status(500).send();
+    }
   }
+
+  const image = await Jimp.read(response.data);
 
   if (text) {
     const font = await Jimp.loadFont(`font/${textFont}/${textFont}.fnt`);
