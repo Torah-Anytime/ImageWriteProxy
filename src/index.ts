@@ -9,7 +9,12 @@ const app = express();
 
 app.use(morgan("tiny"));
 
-app.get("/v1", async (req, res) => {
+// I added a catch all on the route so we can add arbitrary information after and
+// it'll still resolve properly.
+// Reason: When downloading an image in the browser, the default name is the last
+// directory of the path. The will allow us to use `/v1/661-r-meir-simcha-sperling_dose_podcast`
+// for the url.
+app.get("/v1*", async (req, res) => {
   const {
     url,
     text,
