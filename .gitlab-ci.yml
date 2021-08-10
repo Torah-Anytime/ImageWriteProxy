@@ -1,3 +1,6 @@
+variables:
+  PROD_IP: 138.68.45.52
+
 stages:
   - build
   - deploy
@@ -23,9 +26,9 @@ deploy:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
   script:
-    - ssh apps@$IP "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
-    - ssh apps@$IP "docker service update ta_image-proxy --image $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG --update-failure-action rollback --with-registry-auth"
-    - ssh apps@$IP "docker system prune -af"
+    - ssh apps@$PROD_IP "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
+    - ssh apps@$PROD_IP "docker service update ta_image-proxy --image $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG --update-failure-action rollback --with-registry-auth"
+    - ssh apps@$PROD_IP "docker system prune -af"
   tags: [ssh]
   when: manual
   only:
