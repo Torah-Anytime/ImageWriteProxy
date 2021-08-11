@@ -3,11 +3,16 @@
 We needed a way to dynamicly overlay text over images. This proxy allows you to provide a url for the source image, the text, font, and x/y position. It will return the rendered image.
 
 ## Example usage
-`/v1?url=<url to template image>&text=Dose%20%23356&textX=500&textY=8&textFont=in901xl-71-blue&textMaxWidth=100`
+```
+/v1?url=https://git.bitbean.com/ta/image_proxy/uploads/182cc1e0e64de8fc63e2f23341ba5e87/r-ariel-mizrahi_dose_podcast_photo.jpeg&text=Dose%20%23356&textX=500&textY=8&textFont=in901xl-71-blue&textMaxWidth=100
+```
 Will use this template image:
-![template-photo](/uploads/182cc1e0e64de8fc63e2f23341ba5e87/r-ariel-mizrahi_dose_podcast_photo.jpeg)
+
+<img src="/uploads/182cc1e0e64de8fc63e2f23341ba5e87/r-ariel-mizrahi_dose_podcast_photo.jpeg"  width="120">
+
 And render it as:
-![rendered-photo](/uploads/805c017b111176808091abeadf67f78a/948-podcast.png)
+
+<img src="/uploads/805c017b111176808091abeadf67f78a/948-podcast.png"  width="120">
 
 #### `/v1`
 This is the base path
