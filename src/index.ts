@@ -20,6 +20,8 @@ app.get("/v1*", async (req, res) => {
     text,
     textX = 0,
     textY = 0,
+    // Font can be generated https://ttf2fnt.com/
+    // The blue color is: r: 5 g: 95 b: 182
     textFont = "in901xl-32-black",
     textRotate = 0,
     textMaxWidth,
