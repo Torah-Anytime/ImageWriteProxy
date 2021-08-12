@@ -32,10 +32,33 @@ The font name to use. This font needs to be available in the container. See [fon
 #### `textMaxWidth=`
 The maximum width of the text. If the text is wider, it will break to the next line.
 
-
 ## Font
 We are using [JIMP](https://github.com/oliver-moran/jimp) to render the image. Jimp only accepts .fnt font files. We need to create .fnt files for each file size and color we plan on using.
 
 https://ttf2fnt.com/ is an online converter which can convert from .ttf to .fnt.
 
 Currently, all the .fnt files must be embedded in the container.
+
+The font we use currently is [IN901XL](/uploads/97e4953010d55b4870d65fa296a504c0/IN901XK.ttf). To create more variants of this font:
+
+1. Go to https://ttf2fnt.com/
+1. Upload the font file
+1. Set the size and color. (The "blue" color currently in use is `rgb(5, 95, 182)`)
+1. Click "Convert"
+1. Unzip the directory
+1. Rename the directory in this format:
+    ```
+    <font name in lowercase>-<font size>-<color>
+    ```
+1. Open the directory and rename the `.fnt` file to match the folder name with the `.fnt` at the end:
+    ```
+    <font name in lowercase>-<font size>-<color>.fnt
+    ```
+1. Add it into the `/font` directory.
+1. The font will now be available to the service
+
+#### https://ttf2fnt.com/ notes
+I have had an issue uploading a font file which has a space in the file name. See this [Tweet](https://twitter.com/Moshe_Grunwald/status/1425479706422521861?s=20).
+
+#### .fnt file notes
+.fnt fonts are a directory which includes a .fnt file. Inside the .fnt file there are lines which begin with `page id=`. These lines link the .png files which contain the font bitmaps. If any of the .png files are renamed, they must also be updated in this file.
