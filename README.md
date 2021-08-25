@@ -8,11 +8,11 @@ We needed a way to dynamicly overlay text over images. This proxy allows you to 
 ```
 Will use this template image:
 
-<img src="/uploads/182cc1e0e64de8fc63e2f23341ba5e87/r-ariel-mizrahi_dose_podcast_photo.jpeg"  width="120">
+<img src="https://user-images.githubusercontent.com/34072688/130798640-e93a4694-9a2c-4f97-8228-0d3987e8c9af.jpeg"  width="120">
 
 And render it as:
 
-<img src="/uploads/805c017b111176808091abeadf67f78a/948-podcast.png"  width="120">
+<img src="https://user-images.githubusercontent.com/34072688/130798737-934af418-546d-4ccd-a5c5-e04a988da5ee.png"  width="120">
 
 #### `/v1`
 This is the base path
