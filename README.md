@@ -39,7 +39,7 @@ https://ttf2fnt.com/ is an online converter which can convert from .ttf to .fnt.
 
 Currently, all the .fnt files must be embedded in the container.
 
-The font we use currently is [IN901XL](/uploads/97e4953010d55b4870d65fa296a504c0/IN901XK.ttf). To create more variants of this font:
+The font we use currently is [IN901XL](/font/ttf/IN901XK.ttf). To create more variants of this font:
 
 1. Go to https://ttf2fnt.com/
 1. Upload the font file
