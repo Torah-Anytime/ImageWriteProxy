@@ -1,6 +1,6 @@
 # Image Proxy
 
-We needed a way to dynamicly overlay text over images. This proxy allows you to provide a url for the source image, the text, font, and x/y position. It will return the rendered image.
+We needed a way to dynamically overlay text over images. This proxy allows you to provide a url for the source image, the text, font, and x/y position. It will return the rendered image.
 
 ## Example usage
 ```
