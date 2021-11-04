@@ -2,6 +2,12 @@
 
 We needed a way to dynamically overlay text over images. This proxy allows you to provide a url for the source image, the text, font, and x/y position. It will return the rendered image.
 
+## Running
+
+```
+docker run ghcr.io/torah-anytime/image-write-proxy:latest
+```
+
 ## Example usage
 ```
 /v1?url=https://git.bitbean.com/ta/image_proxy/uploads/182cc1e0e64de8fc63e2f23341ba5e87/r-ariel-mizrahi_dose_podcast_photo.jpeg&text=Dose%20%23356&textX=500&textY=8&textFont=in901xl-71-blue&textMaxWidth=100
