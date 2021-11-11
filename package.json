@@ -1,6 +1,6 @@
 {
   "name": "image_proxy",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Proxy service to add text onto an image.",
   "main": "/dist/index.js",
   "scripts": {
